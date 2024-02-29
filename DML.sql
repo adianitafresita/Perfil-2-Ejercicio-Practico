@@ -51,3 +51,21 @@ CALL insert_producto('Helado', 'Helado de vainilla', 2.99, 70);
 CALL insert_producto('Café', 'Café americano', 1.99, 80);
 CALL insert_producto('Refresco', 'Refresco de cola', 1.49, 90);
 SELECT * FROM empleados;
+
+
+CALL insert_detalles_pedido('Cliente1', 'Producto1', 5, 10.99, 54.95);
+CALL insert_detalles_pedido('Cliente2', 'Producto2', 5, 10.99, 54.95);
+CALL insert_detalles_pedido('Cliente3', 'Producto3', 5, 10.99, 54.95);
+CALL insert_detalles_pedido('Cliente4', 'Producto4', 5, 10.99, 54.95);
+CALL insert_detalles_pedido('Cliente5', 'Producto5', 5, 10.99, 54.95);
+CALL insert_detalles_pedido('Cliente6', 'Producto6', 5, 10.99, 54.95);
+CALL insert_detalles_pedido('Cliente7', 'Producto7', 5, 10.99, 54.95);
+CALL insert_detalles_pedido('Cliente8', 'Producto8', 5, 10.99, 54.95);
+CALL insert_detalles_pedido('Cliente9', 'Producto9', 5, 10.99, 54.95);
+CALL insert_detalles_pedido('Cliente10', 'Producto10', 5, 10.99, 54.95);
+CALL insert_detalles_pedido('Cliente11', 'Producto11', 5, 10.99, 54.95);
+CALL insert_detalles_pedido('Cliente12', 'Producto12', 5, 10.99, 54.95);
+CALL insert_detalles_pedido('Cliente13', 'Producto13', 5, 10.99, 54.95);
+CALL insert_detalles_pedido('Cliente14', 'Producto14', 5, 10.99, 54.95);
+CALL insert_detalles_pedido('Cliente15', 'Producto15', 5, 10.99, 54.95);
+SELECT * FROM detalles_pedido;
