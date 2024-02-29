@@ -46,6 +46,29 @@ BEGIN
     INSERT INTO detalles_pedido(pedido_id, producto_id, cantidad, precio_unitario, subtotal) VALUES (pedido_id_var, producto_id_var, cantidad, precio_unitario, subtotal);
 END //
 
+//
+
+DELIMITER //
+
+CREATE PROCEDURE insert_detalles_pedido(nombre_cliente VARCHAR(50), nombre_producto VARCHAR(100), cantidad INT, precio_unitario DECIMAL(10,2), subtotal DECIMAL(10,2))
+BEGIN
+    DECLARE cliente_id_var BINARY(16);
+    DECLARE pedido_id_var BINARY(16);
+    DECLARE producto_id_var BINARY(16);
+
+    -- Obtener el cliente_id
+    SELECT cliente_id INTO cliente_id_var FROM clientes WHERE nombre = nombre_cliente LIMIT 1;
+    
+    -- Obtener el pedido_id
+    SELECT pedido_id INTO pedido_id_var FROM pedidos WHERE cliente_id = cliente_id_var LIMIT 1;
+
+    -- Obtener el producto_id
+    SELECT producto_id INTO producto_id_var FROM productos WHERE nombre = nombre_producto LIMIT 1;
+
+    -- Insertar el detalle del pedido
+    INSERT INTO detalles_pedido(pedido_id, producto_id, cantidad, precio_unitario, subtotal) VALUES (pedido_id_var, producto_id_var, cantidad, precio_unitario, subtotal);
+END //
+
 DELIMITER ;
 
 
